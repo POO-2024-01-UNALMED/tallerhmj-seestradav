@@ -17,7 +17,12 @@ public String toString(){
     String futbolistaInfo=super.toString();
     return futbolistaInfo+"con el dorsal"+dorsal+". Le han marcado "+golesRecibidos;
 }
-public int compareTo(Portero j){
-    return Math.abs(this.golesRecibidos - j.golesRecibidos);
-}
+@Override
+    public int compareTo(Object f) {
+        if (f instanceof Portero) {
+            Portero p = (Portero) f;
+            return Math.abs(this.golesRecibidos - p.golesRecibidos);
+        }
+        else {return this.golesRecibidos;}
+    }
 }

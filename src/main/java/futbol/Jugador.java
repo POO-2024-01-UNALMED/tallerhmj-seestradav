@@ -12,14 +12,22 @@ public Jugador(){
     this.golesMarcados=289;
     this.dorsal=7;
 }
-public int compareTo(Jugador j){
-    return Math.abs(this.getEdad() - j.getEdad());
-}
+@Override
+    public int compareTo(Object f) {
+
+        if (f instanceof Jugador) {
+            Jugador p = (Jugador) f;
+            return Math.abs(this.getEdad() - p.getEdad());
+        }
+        else {return this.getEdad();}
+    }
+
 @Override
 public String toString(){
     String futbolistaInfo=super.toString();
     return futbolistaInfo+"con el dorsal"+dorsal+". Ha marcado "+golesMarcados;
 }
+
 @Override
 public boolean jugarConLasManos(){
     return false;
