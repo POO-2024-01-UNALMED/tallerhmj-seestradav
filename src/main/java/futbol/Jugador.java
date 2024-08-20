@@ -16,8 +16,8 @@ public Jugador(){
     public int compareTo(Object f) {
 
         if (f instanceof Jugador) {
-            Jugador p = (Jugador) f;
-            return Math.abs(this.getEdad() - p.getEdad());
+            Jugador c = (Jugador) f;
+            return Math.abs(this.getEdad() - c.getEdad());
         }
         else {return this.getEdad();}
     }
